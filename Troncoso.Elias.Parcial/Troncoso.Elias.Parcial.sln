@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Troncoso.Elias.Parcial", "Troncoso.Elias.Parcial\Troncoso.Elias.Parcial.csproj", "{5B59BD53-8376-487F-BBA0-5DA02E7C089A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{55360631-BC0D-474D-99FB-888D479AC064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B59BD53-8376-487F-BBA0-5DA02E7C089A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B59BD53-8376-487F-BBA0-5DA02E7C089A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B59BD53-8376-487F-BBA0-5DA02E7C089A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B59BD53-8376-487F-BBA0-5DA02E7C089A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55360631-BC0D-474D-99FB-888D479AC064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55360631-BC0D-474D-99FB-888D479AC064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55360631-BC0D-474D-99FB-888D479AC064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55360631-BC0D-474D-99FB-888D479AC064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82205C39-40D4-4BA8-BD45-42DAAD792FE3}
+	EndGlobalSection
+EndGlobal

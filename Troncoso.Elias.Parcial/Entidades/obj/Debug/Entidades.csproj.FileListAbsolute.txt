@@ -1,0 +1,8 @@
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\bin\Debug\Entidades.dll
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\obj\Debug\Entidades.dll
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Entidades\obj\Debug\Entidades.csproj.CopyComplete
