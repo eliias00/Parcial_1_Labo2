@@ -16,3 +16,6 @@ C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso
 C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\obj\Debug\Troncoso.Elias.Parcial.frm_Stock.resources
 C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\obj\Debug\Troncoso.Elias.Parcial.frm_Agregar_Producto.resources
 C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\obj\Debug\Troncoso.Elias.Parcial.frm_Agregar_Empleado.resources
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\obj\Debug\Troncoso.Elias.Parcial.frm_Compras.resources
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\bin\Debug\Control.Draggable.dll
+C:\Users\Elias\OneDrive\Escritorio\Parcial Elias\Troncoso.Elias.Parcial\Troncoso.Elias.Parcial\obj\Debug\Troncoso.Elias.Parcial.frm_Listados.resources

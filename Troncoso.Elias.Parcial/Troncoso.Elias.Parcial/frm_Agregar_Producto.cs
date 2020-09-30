@@ -48,15 +48,16 @@ namespace Troncoso.Elias.Parcial
 
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
-
+            
             string nombre = txtB_Nombre_Producto_Agre.Text;
             int id;
             double precio;
-            string Stock = txtB_Stock_Producto_Agre.Text;
+            int Stock;
             Productos nuevoProducto;
             Productos modificacionProducto = new Productos();
 
             Int32.TryParse(txtB_Id_Producto_Agre.Text, out id);
+            Int32.TryParse(txtB_Stock_Producto_Agre.Text, out Stock);
             double.TryParse(txtB_Precio_Producto_Agre.Text, out precio);
             nuevoProducto = new Productos(nombre, id, precio, Stock);
 

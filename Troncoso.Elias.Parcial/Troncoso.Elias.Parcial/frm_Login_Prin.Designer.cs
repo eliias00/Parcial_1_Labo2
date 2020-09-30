@@ -118,11 +118,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pBox_Login;
-        private System.Windows.Forms.TextBox txtBox_Usuario;
         private System.Windows.Forms.TextBox txtBox_Contraseña;
         private System.Windows.Forms.Button btn_Login_Ingre;
         private System.Windows.Forms.Label lbl_login;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        public System.Windows.Forms.TextBox txtBox_Usuario;
     }
 }
 

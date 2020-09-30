@@ -13,7 +13,7 @@ namespace Entidades
         string nombre;
         int idProducto;
         double precio;
-        string stockActual;
+        int stockActual;
 
 
         public Productos()
@@ -21,16 +21,16 @@ namespace Entidades
             this.nombre = "sin nombre";
             this.idProducto = -1;
             this.precio = -1;
-            this.stockActual = "-1";
+            this.stockActual = -1;
 
         }
-        public Productos(string nombre, int idProducto, string stockActual) : this()
+        public Productos(string nombre, int idProducto, int stockActual) : this()
         {
             this.nombre = nombre;
             this.idProducto = idProducto;
             this.stockActual = stockActual;
         }
-        public Productos(string nombre, int idProducto, double precio, string stockActual) : this(nombre, idProducto, stockActual)
+        public Productos(string nombre, int idProducto, double precio, int stockActual) : this(nombre, idProducto, stockActual)
         {
             this.precio = precio;
         }
@@ -50,7 +50,7 @@ namespace Entidades
             get { return this.precio; }
         }
 
-        public string Stock
+        public int Stock
         {
             set { this.stockActual = value; }
             get { return this.stockActual; }

@@ -11,21 +11,28 @@ namespace Entidades
     public class Empleado:Persona
     {
         string legajo;
+        int id;
 
         public Empleado()
         {
 
         }
         public Empleado(string auxLegajo, string auxContraseña, int auxDni, string auxNombre,
-                       string auxApellido, long auxTel, string auxEmail) : base(auxContraseña, auxDni, auxNombre,
+                       string auxApellido, long auxTel, string auxEmail,int auxId) : base(auxContraseña, auxDni, auxNombre,
                                                                                 auxApellido, auxTel, auxEmail)
         {
             this.legajo = auxLegajo;
+            this.id = auxId;
         }
         public string Legajo
         {
             set { this.legajo = value; }
             get { return this.legajo; }
+        }
+        public int Id
+        {
+            set { this.id= value; }
+            get { return this.id; }
         }
         public static bool operator +(List<Empleado> listaEmpleados, Empleado empleados)
         {

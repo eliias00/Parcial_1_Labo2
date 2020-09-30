@@ -14,6 +14,7 @@ namespace Troncoso.Elias.Parcial
     public partial class frm_Login_Prin : Form
     {
         Empleado nuevoEmpleado;
+        Cliente nuevoCliente;
         public frm_Login_Prin()
         {
 
@@ -31,6 +32,7 @@ namespace Troncoso.Elias.Parcial
 
             Comercio.CargaDeClientes();
             Comercio.CargaDeEmpleados();
+            Comercio.CargaDeCompras();
 
         }
 
@@ -47,11 +49,19 @@ namespace Troncoso.Elias.Parcial
         private void Btn_Login_Ingre_Click(object sender, EventArgs e)
         {
             nuevoEmpleado = new Empleado();
+            nuevoCliente = new Cliente();
             string usuario = txtBox_Usuario.Text;
             string contraseña = txtBox_Contraseña.Text;
             frm_Stock formStock = new frm_Stock();
+            frm_Compras formCompras = new frm_Compras();
 
             nuevoEmpleado.Legajo = usuario;
+            nuevoEmpleado.Contraseña = contraseña;
+            nuevoCliente.Usuario = usuario;
+            nuevoCliente.Contraseña = contraseña;
+
+            Comercio.guardoUsuarioYContraseña(usuario, contraseña); 
+
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña) && usuario != "Ingrese Usuario" && contraseña != "Ingrese Contraseña")
             {
                 if (usuario.Substring(0, 3) == "leg")
@@ -68,8 +78,16 @@ namespace Troncoso.Elias.Parcial
                 }
                 else if (usuario.Substring(0, 3) == "use")
                 {
-                    frm_Compras formCompras = new frm_Compras();
-                    formCompras.Show();
+
+                    if (Comercio.buscoCliente(nuevoCliente) == true)
+                    {
+                        formCompras.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El cliente no existe");
+                    }
+
                 }
             }
             else
@@ -81,7 +99,7 @@ namespace Troncoso.Elias.Parcial
         {
             frm_Agregar_cliente frmNuevoCliente = new frm_Agregar_cliente();
             frmNuevoCliente.Show();
-            this.Hide();
+           // this.Hide();
 
 
         }

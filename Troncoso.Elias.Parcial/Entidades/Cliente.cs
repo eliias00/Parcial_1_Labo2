@@ -11,7 +11,11 @@ namespace Entidades
     public class Cliente :Persona
     {
         string usuario;
-        
+
+        public Cliente()
+        {
+
+        }
         public Cliente(string auxUsuario, string auxContraseña, int auxDni, string auxNombre,
                        string auxApellido, long auxTel, string auxEmail) :base( auxContraseña,  auxDni,  auxNombre,
                                                                                 auxApellido,  auxTel,  auxEmail)

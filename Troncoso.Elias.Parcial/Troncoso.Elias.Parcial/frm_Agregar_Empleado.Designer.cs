@@ -196,6 +196,7 @@
             this.Controls.Add(this.lbl_Legajo_Emp);
             this.Name = "frm_Agregar_Empleado";
             this.Text = "frm_Agregar_Empleado";
+            this.Load += new System.EventHandler(this.Frm_Agregar_Empleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

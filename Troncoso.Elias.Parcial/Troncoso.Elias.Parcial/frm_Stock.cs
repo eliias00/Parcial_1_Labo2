@@ -40,7 +40,7 @@ namespace Troncoso.Elias.Parcial
                 if (nuevosProductos[i].IdProducto == ProductoAComparar.IdProducto)
                 {
                     nuevosProductos[i].Precio = -1;
-                    nuevosProductos[i].Stock = "-1";
+                    nuevosProductos[i].Stock = -1;
                     nuevosProductos[i].Nombre = nuevosProductos[i].Nombre + " (discontinuado)";
                     retorno = true;
                     break;
@@ -68,7 +68,8 @@ namespace Troncoso.Elias.Parcial
             ProductoAComparar = new Productos();
             double precioCasteado;
             int idAComparar;
-            string nuevoStock;
+            string nuevoStockStr;
+            int nuevoStock;
             string nuevoPrecio;
             bool retorno = false;
             string idModificacion = Interaction.InputBox("Ingrese el ID del producto a buscar");
@@ -79,7 +80,8 @@ namespace Troncoso.Elias.Parcial
             {
                 if (nuevosProductos[i].IdProducto == ProductoAComparar.IdProducto)
                 {
-                    nuevoStock = Interaction.InputBox("Ingrese el nuevo stock del producto");
+                    nuevoStockStr = Interaction.InputBox("Ingrese el nuevo stock del producto");
+                    int.TryParse(nuevoStockStr, out nuevoStock);
                     nuevoPrecio = Interaction.InputBox("Ingrese el nuevo precio del producto");
                     double.TryParse(nuevoPrecio, out precioCasteado);
                     retorno = true;
@@ -116,6 +118,17 @@ namespace Troncoso.Elias.Parcial
             this.dGViewStock.DataSource = null;
             this.dGViewStock.DataSource = nuevosProductos;
             this.dGViewStock.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IBtn_Info_Listados_Click(object sender, EventArgs e)
+        {
+            frm_Listados formListados = new frm_Listados();
+            formListados.Show();
         }
     }
 }
