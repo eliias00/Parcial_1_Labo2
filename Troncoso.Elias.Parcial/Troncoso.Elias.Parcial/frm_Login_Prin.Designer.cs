@@ -34,6 +34,7 @@
             this.btn_Login_Ingre = new System.Windows.Forms.Button();
             this.lbl_login = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.checkBox_Contraseña = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_Login)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -59,16 +60,18 @@
             // 
             // txtBox_Contraseña
             // 
+            this.txtBox_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Contraseña.Location = new System.Drawing.Point(556, 199);
             this.txtBox_Contraseña.Multiline = true;
             this.txtBox_Contraseña.Name = "txtBox_Contraseña";
+            this.txtBox_Contraseña.PasswordChar = '*';
             this.txtBox_Contraseña.Size = new System.Drawing.Size(160, 25);
             this.txtBox_Contraseña.TabIndex = 2;
             // 
             // btn_Login_Ingre
             // 
             this.btn_Login_Ingre.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login_Ingre.Location = new System.Drawing.Point(585, 242);
+            this.btn_Login_Ingre.Location = new System.Drawing.Point(582, 267);
             this.btn_Login_Ingre.Name = "btn_Login_Ingre";
             this.btn_Login_Ingre.Size = new System.Drawing.Size(105, 30);
             this.btn_Login_Ingre.TabIndex = 3;
@@ -82,7 +85,7 @@
             this.lbl_login.BackColor = System.Drawing.Color.Transparent;
             this.lbl_login.Font = new System.Drawing.Font("Candara", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_login.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_login.Location = new System.Drawing.Point(520, 304);
+            this.lbl_login.Location = new System.Drawing.Point(516, 318);
             this.lbl_login.Name = "lbl_login";
             this.lbl_login.Size = new System.Drawing.Size(272, 19);
             this.lbl_login.TabIndex = 4;
@@ -95,11 +98,25 @@
             this.fileSystemWatcher1.SynchronizingObject = this;
             this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher1_Changed);
             // 
+            // checkBox_Contraseña
+            // 
+            this.checkBox_Contraseña.AutoSize = true;
+            this.checkBox_Contraseña.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox_Contraseña.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_Contraseña.Location = new System.Drawing.Point(556, 230);
+            this.checkBox_Contraseña.Name = "checkBox_Contraseña";
+            this.checkBox_Contraseña.Size = new System.Drawing.Size(155, 20);
+            this.checkBox_Contraseña.TabIndex = 5;
+            this.checkBox_Contraseña.Text = "Mostrar contraseña";
+            this.checkBox_Contraseña.UseVisualStyleBackColor = false;
+            this.checkBox_Contraseña.CheckedChanged += new System.EventHandler(this.CheckBox_Contraseña_CheckedChanged);
+            // 
             // frm_Login_Prin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox_Contraseña);
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.btn_Login_Ingre);
             this.Controls.Add(this.txtBox_Contraseña);
@@ -116,13 +133,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pBox_Login;
         private System.Windows.Forms.TextBox txtBox_Contraseña;
         private System.Windows.Forms.Button btn_Login_Ingre;
         private System.Windows.Forms.Label lbl_login;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         public System.Windows.Forms.TextBox txtBox_Usuario;
+        private System.Windows.Forms.CheckBox checkBox_Contraseña;
+        public System.Windows.Forms.PictureBox pBox_Login;
     }
 }
 

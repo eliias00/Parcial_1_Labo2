@@ -61,7 +61,7 @@ namespace Entidades
 
             for (int i = 0; i < listaEmpleados.Count; i++)
             {
-                if (listaEmpleados[i].legajo == empleados.legajo)
+                if (listaEmpleados[i].legajo == empleados.legajo && listaEmpleados[i].Contraseña == empleados.Contraseña)
                 {
                     retorno = true;
                     break;

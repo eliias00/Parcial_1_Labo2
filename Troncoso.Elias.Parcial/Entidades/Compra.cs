@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public class Compra
-    {
-       
+    {      
         Cliente cliente;
         Empleado empleado;
         double precioTotal;
+        List<string> nombreProductos;
         public Compra()
         {
+            nombreProductos = new List<string>();
             this.precioTotal = -1;
         }
-        public Compra(Empleado auxEmpleado, Cliente auxComprador, double auxPrecioTotal) : this()
+        public Compra(Empleado auxEmpleado, Cliente auxComprador, double auxPrecioTotal, List<string> auxProductos) : this()
         {
+            this.nombreProductos = auxProductos;
             this.cliente = auxComprador;
             this.empleado = auxEmpleado;
             this.precioTotal = auxPrecioTotal;

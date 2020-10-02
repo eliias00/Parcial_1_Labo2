@@ -13,7 +13,7 @@ namespace Troncoso.Elias.Parcial
 {
     public partial class frm_Agregar_Empleado : Form
     {
-            Empleado nuevoEmplado;
+        Empleado nuevoEmplado;
         List<Empleado> empleados;
         public frm_Agregar_Empleado()
         {
@@ -29,17 +29,26 @@ namespace Troncoso.Elias.Parcial
             lbl_Legajo_Emp.Text = legajo;
             Int32.TryParse(txtBox_Dni_Emp.Text, out auxDni);
             long.TryParse(txtBox_Telefono_Emp.Text, out auxTelefono);
-            nuevoEmplado = new Empleado(txtBox_Legajo_Emp.Text, txtBox_Contraseña_Emp.Text, auxDni,
-                                        txtBox_Nombre_Emp.Text, txtBox_Apellido_Emp.Text, auxTelefono,
-                                        txtBox_Email_Emp.Text, Comercio.GenerarIdEmpleado(empleados));
-            
-            if (Comercio.AgregarEmpleado(nuevoEmplado) == true)
+            if (Validaciones.ValidoString(txtBox_Contraseña_Emp.Text) && Validaciones.ValidoNumeroInt(auxDni) &&
+               Validaciones.ValidoString(txtBox_Nombre_Emp.Text) && Validaciones.ValidoString(txtBox_Apellido_Emp.Text) &&
+               Validaciones.ValidoNumeroLong(auxTelefono) && Validaciones.ValidoString(txtBox_Email_Emp.Text))
             {
-                MessageBox.Show("alta de empleado exitosamente");
+                nuevoEmplado = new Empleado(legajo, txtBox_Contraseña_Emp.Text, auxDni,
+                                            txtBox_Nombre_Emp.Text, txtBox_Apellido_Emp.Text, auxTelefono,
+                                            txtBox_Email_Emp.Text, Comercio.GenerarIdEmpleado(empleados));
+
+                if (Comercio.AgregarEmpleado(nuevoEmplado) == true)
+                {
+                    MessageBox.Show("alta de empleado exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("error en alta de empleado");
+                }
             }
             else
             {
-                MessageBox.Show("error en alta de empleado");
+                MessageBox.Show("le falta llenar algun campo");
             }
         }
 
@@ -47,6 +56,11 @@ namespace Troncoso.Elias.Parcial
         {
             string legajo = Comercio.generoLegajoEmpleadoNuevo();
             lbl_Legajo_Emp.Text = legajo;
+        }
+
+        private void PBox_AgregarEmpleado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

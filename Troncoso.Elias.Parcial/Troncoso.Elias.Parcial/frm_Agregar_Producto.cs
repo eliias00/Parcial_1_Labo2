@@ -41,14 +41,9 @@ namespace Troncoso.Elias.Parcial
 
         }
 
-        private void Frm_Agregar_Producto_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
-            
+
             string nombre = txtB_Nombre_Producto_Agre.Text;
             int id;
             double precio;
@@ -59,20 +54,40 @@ namespace Troncoso.Elias.Parcial
             Int32.TryParse(txtB_Id_Producto_Agre.Text, out id);
             Int32.TryParse(txtB_Stock_Producto_Agre.Text, out Stock);
             double.TryParse(txtB_Precio_Producto_Agre.Text, out precio);
-            nuevoProducto = new Productos(nombre, id, precio, Stock);
-
-            if (Comercio.AgregarProducto(nuevoProducto) == true)
+            if (Validaciones.ValidoString(nombre) && Validaciones.ValidoNumeroInt(id) &&
+               Validaciones.ValidoNumeroInt(Stock) && Validaciones.ValidoNumeroDouble(precio))
             {
-                MessageBox.Show("Su producto se dio de alta");
+                nuevoProducto = new Productos(nombre, id, precio, Stock);
+                if (Comercio.AgregarProducto(nuevoProducto) == true)
+                {
+                    MessageBox.Show("Su producto se dio de alta");
+                }
+                else
+                {
+                    MessageBox.Show("Su producto no se dio de alta");
+                }
             }
             else
             {
-                MessageBox.Show("Su producto no se dio de alta");
+                MessageBox.Show("Le falta completar un campo");
             }
+        }
 
+        private void Frm_Agregar_Producto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        
 
 
         }
 
+        private void Lbl_Precio_Producto_Agre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lbl_Id_Producto_Agre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

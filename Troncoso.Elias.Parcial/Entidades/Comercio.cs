@@ -63,13 +63,13 @@ namespace Entidades
         }
         public static void CargaDeEmpleados()
         {
-            nuevosEmpleados.Add(new Empleado("leg00001", "ApupA", 1234567, "Apu", "Nahasapeemapetilon", 11334455, "apuATR@gmail.com", 0));
-            nuevosEmpleados.Add(new Empleado("leg00002", "1235", 1234566, "jose", "jeje", 22443311, "jaja@gmail.com", 1));
+            nuevosEmpleados.Add(new Empleado("Leg00001", "ApupA", 1234567, "Apu", "Nahasapeemapetilon", 11334455, "apuATR@gmail.com", 0));
+            nuevosEmpleados.Add(new Empleado("Leg00009", "1235", 1234566, "jose", "jeje", 22443311, "jaja@gmail.com", 1));
         }
         public static void CargaDeClientes()
         {
-            nuevosClientes.Add(new Cliente("user0001", "1234", 1234567, "cliente1", "lopez", 66666666, "lalelilolu@gmail.com"));
-            nuevosClientes.Add(new Cliente("user0002", "1236", 1234566, "cliente2", "perez", 77777777, "123456789@gmail.com"));
+            nuevosClientes.Add(new Cliente("User0001", "1234", 1234567, "cliente1", "lopez", 66666666, "lalelilolu@gmail.com"));
+            nuevosClientes.Add(new Cliente("User0002", "1236", 1234566, "cliente2", "perez", 77777777, "123456789@gmail.com"));
         }
         public static void CargaDeCompras()
         {
@@ -131,7 +131,12 @@ namespace Entidades
                 new Cliente("user0049", "Contra1233", 1234567, "cliente25", "lopez", 66666666, "lalelilolu@gmail.com"),new Cliente("user0001", "1234", 1234567, "cliente1", "lopez", 66666666, "lalelilolu@gmail.com")
             };
 
-
+            string[] descripcionProductos = new string[50]{ "Cerveza Duff", "Rosquillas","Playera", "Calcetines", "Malteada de Frutilla",
+                "Malteada de Naranja","Malteada de Uva","Malteada de Manzana","Malteada de Coco","Malteada de Pera","Hot Dog","Pizza",
+                "Langosta","Kruty Burger", "Kruty Snacks","boligrafo","Helado Tricolor", "Chuletas", "Pretzels","Pescado y Maricos",
+                "Ensalada","Taza de Cafe", "Taza de Te","Chocolate","Tocino","Patatas Fritas","Tomato","Caramelo","Plankton","Pastel",
+                "papas1","papas2","papas3","papas4","papas5","papas6","papas7","papas8","papas9","papas10",
+                "papas11","papas12","papas13","papas14","papas15","papas16","papas17","papas18","papas19","papas20", };
 
             double[] arrayPrecios = new double[50]
             { 11, 54, 66, 170, 68, 130, 335, 43, 131, 138, 50, 197, 110, 81, 150, 28, 132,
@@ -140,8 +145,9 @@ namespace Entidades
 
             for (int i = 0; i < 50; i++)
             {
-
-                nuevasCompras.Add(new Compra(arrayEmpleados[i], arrayClientes[i], arrayPrecios[i]));
+                List<string> auxLista = new List<string>();
+                auxLista.Add(descripcionProductos[i]);
+                nuevasCompras.Add(new Compra(arrayEmpleados[i], arrayClientes[i], arrayPrecios[i], auxLista));
             }
         }
 
@@ -211,15 +217,17 @@ namespace Entidades
             idAleatorio = empleadoAle.Next(count);
             string nombre = "";
             string apellido = "";
+            string legajo = "";
             foreach (Empleado empleado in empleados)
             {
                 if (empleado.Id == idAleatorio)
                 {
                     nombre = empleado.Nombre;
                     apellido = empleado.Apellido;
+                    legajo = empleado.Legajo;
                 }
             }
-            return nombre + " " + apellido;
+            return nombre + " " + apellido + "\n" + legajo;
         }
         public static int GenerarIdEmpleado(List<Empleado> empleados)
         {
@@ -277,16 +285,14 @@ namespace Entidades
         {
             for (int i = 0; i < nuevosEmpleados.Count; i++)
             {
-                if (nuevosEmpleados[i].Apellido == nuevoEmpleado.Apellido)
+                if (nuevosEmpleados[i].Legajo == nuevoEmpleado.Legajo)
                 {
-                    if (nuevosEmpleados[i].Nombre == nuevoEmpleado.Nombre)
-                    {
-                        nuevoEmpleado.Id = nuevosEmpleados[i].Id;
-                        nuevoEmpleado.Legajo = nuevosEmpleados[i].Legajo;
-                        nuevoEmpleado.Dni = nuevosEmpleados[i].Dni;
-                        nuevoEmpleado.Telefono = nuevosEmpleados[i].Telefono;
-                        nuevoEmpleado.Email = nuevosEmpleados[i].Email;
-                    }
+                    nuevoEmpleado.Id = nuevosEmpleados[i].Id;
+                    nuevoEmpleado.Legajo = nuevosEmpleados[i].Legajo;
+                    nuevoEmpleado.Dni = nuevosEmpleados[i].Dni;
+                    nuevoEmpleado.Telefono = nuevosEmpleados[i].Telefono;
+                    nuevoEmpleado.Email = nuevosEmpleados[i].Email;
+                    nuevoEmpleado.Email = nuevosEmpleados[i].Email;
                 }
             }
             return nuevoEmpleado;
@@ -330,7 +336,7 @@ namespace Entidades
             int parteDeLegajo;
             int legajoNumerico = 0;
             bool flag = true;
-            
+
             for (int i = 0; i < nuevosEmpleados.Count; i++)
             {
                 parteDeLegajoStr = nuevosEmpleados[i].Legajo.Substring(3, 5);
@@ -341,26 +347,58 @@ namespace Entidades
                     flag = false;
                     legajoNumerico = parteDeLegajo;
                 }
-            }         
-            if(legajoNumerico.ToString().Length == 1)
+            }
+
+            if (legajoNumerico.ToString().Length == 1)
             {
                 legajoNuevo = "Leg0000";
+                if (legajoNumerico == 9)
+                {
+                    legajoNuevo = "Leg000";
+                }
             }
-            else if(legajoNumerico.ToString().Length == 2)
+            else if (legajoNumerico.ToString().Length == 2)
             {
                 legajoNuevo = "Leg000";
+                if (legajoNumerico == 99)
+                {
+                    legajoNuevo = "Leg00";
+                }
             }
             else if (legajoNumerico.ToString().Length == 3)
             {
                 legajoNuevo = "Leg00";
+                if (legajoNumerico == 999)
+                {
+                    legajoNuevo = "Leg0";
+                }
             }
             else if (legajoNumerico.ToString().Length == 4)
             {
                 legajoNuevo = "Leg0";
             }
             legajoNumerico++;
-          
+
             return legajoNuevo + legajoNumerico.ToString();
+        }
+        public static bool ValidoUnidadesComprar(string auxProducto, double auxUnidades)
+        {
+            bool retorno = false;
+            for (int i = 0; i < nuevosProductos.Count; i++)
+            {
+                if (auxProducto == nuevosProductos[i].Nombre)
+                {
+                    if ((nuevosProductos[i].Stock - (int)auxUnidades) < 0)
+                    {
+                        retorno = false;
+                    }
+                    else
+                    {
+                        retorno = true;
+                    }
+                }
+            }
+            return retorno;
         }
     }
 }

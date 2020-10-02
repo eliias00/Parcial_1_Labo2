@@ -25,7 +25,7 @@ namespace Troncoso.Elias.Parcial
         private void Frm_Listados_Load(object sender, EventArgs e)
         {
 
-            string legajoABuscar = Interaction.InputBox("Ingrese el ID del producto a buscar");
+            string legajoABuscar = Interaction.InputBox("Ingrese el Legajo a buscar");
             listaProductos = Comercio.stock10Unidades();
             ArmoDatagrStock10U(listaProductos);
             listaCompras = Comercio.VentasPorEmpleado(legajoABuscar);

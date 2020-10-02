@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using System.Media;
 
 namespace Troncoso.Elias.Parcial
 {
     public partial class frm_Login_Prin : Form
     {
+        
         Empleado nuevoEmpleado;
         Cliente nuevoCliente;
         public frm_Login_Prin()
@@ -27,8 +29,9 @@ namespace Troncoso.Elias.Parcial
             //   txtBox_Usuario.Text = "Ingrese Usuario";
             //  txtBox_Contraseña.Text = "Ingrese Contraseña";
             // PRUEBA
-            txtBox_Usuario.Text = "leg00001";
-            txtBox_Contraseña.Text = "Ingresea";
+            txtBox_Usuario.Text = "Leg00001";
+            txtBox_Contraseña.Text = "ApupA";
+           
 
             Comercio.CargaDeClientes();
             Comercio.CargaDeEmpleados();
@@ -52,9 +55,10 @@ namespace Troncoso.Elias.Parcial
             nuevoCliente = new Cliente();
             string usuario = txtBox_Usuario.Text;
             string contraseña = txtBox_Contraseña.Text;
+
             frm_Stock formStock = new frm_Stock();
             frm_Compras formCompras = new frm_Compras();
-
+            SoundPlayer sonido;
             nuevoEmpleado.Legajo = usuario;
             nuevoEmpleado.Contraseña = contraseña;
             nuevoCliente.Usuario = usuario;
@@ -62,13 +66,19 @@ namespace Troncoso.Elias.Parcial
 
             Comercio.guardoUsuarioYContraseña(usuario, contraseña); 
 
-            if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña) && usuario != "Ingrese Usuario" && contraseña != "Ingrese Contraseña")
+            if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña) && 
+                usuario != "Ingrese Usuario" && contraseña != "Ingrese Contraseña" && 
+                Validaciones.ValidoString(usuario) && Validaciones.ValidoString(contraseña))
             {
-                if (usuario.Substring(0, 3) == "leg")
+                if (usuario.Substring(0, 3) == "Leg")
                 {
-                    if (Comercio.buscoEmpleado(nuevoEmpleado) == true)
+                    if (Comercio.buscoEmpleado(nuevoEmpleado) == true) 
                     {
+                        
                         formStock.Show();
+                     
+                        formStock.Visible = true;
+                        this.Visible = false;
                     }
                     else
                     {
@@ -76,12 +86,13 @@ namespace Troncoso.Elias.Parcial
                     }
 
                 }
-                else if (usuario.Substring(0, 3) == "use")
+                else if (usuario.Substring(0, 3) == "Use")
                 {
 
                     if (Comercio.buscoCliente(nuevoCliente) == true)
                     {
                         formCompras.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -92,14 +103,14 @@ namespace Troncoso.Elias.Parcial
             }
             else
             {
-                MessageBox.Show("debe llenar los campos");
+                MessageBox.Show("Usuario o Contraseña INCORRECTOS");
             }
         }
         private void Lbl_login_Click(object sender, EventArgs e)
         {
             frm_Agregar_cliente frmNuevoCliente = new frm_Agregar_cliente();
             frmNuevoCliente.Show();
-           // this.Hide();
+           
 
 
         }
@@ -107,6 +118,27 @@ namespace Troncoso.Elias.Parcial
         private void Frm_Login_Prin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void RadioButton_Contraseña_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void CheckBox_Contraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Contraseña.Checked == true)
+            {
+                if(txtBox_Contraseña.PasswordChar == '*')
+                {
+                    txtBox_Contraseña.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtBox_Contraseña.PasswordChar = '*';
+            }
         }
     }
 }

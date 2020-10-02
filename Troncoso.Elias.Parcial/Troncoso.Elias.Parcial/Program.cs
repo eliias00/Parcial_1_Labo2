@@ -11,12 +11,14 @@ namespace Troncoso.Elias.Parcial
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        public static frm_Login_Prin formLogin;
+        public static frm_Listados formLISt;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Login_Prin());
+            Application.Run(formLogin = new frm_Login_Prin());
         }
     }
 }

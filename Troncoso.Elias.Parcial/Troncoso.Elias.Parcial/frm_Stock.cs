@@ -46,21 +46,26 @@ namespace Troncoso.Elias.Parcial
                     break;
                 }
             }
-            if(retorno == true)
+            if (retorno == true)
             {
                 MessageBox.Show("se hizo la baja exitosamente");
+            }
+            else
+            {
+                MessageBox.Show("no se pudo realizar la baja");
             }
         }
 
         private void Frm_Stock_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Application.Exit();
+            Program.formLogin.Show();
         }
 
         private void IBtn_Stock_Click(object sender, EventArgs e)
         {
             frm_Agregar_Producto formProductos = new frm_Agregar_Producto();
             formProductos.Show();
+
         }
 
         private void IBtn_Modif_Prod_Click(object sender, EventArgs e)
@@ -84,10 +89,13 @@ namespace Troncoso.Elias.Parcial
                     int.TryParse(nuevoStockStr, out nuevoStock);
                     nuevoPrecio = Interaction.InputBox("Ingrese el nuevo precio del producto");
                     double.TryParse(nuevoPrecio, out precioCasteado);
-                    retorno = true;
-                    nuevosProductos[i].Precio = precioCasteado;
-                    nuevosProductos[i].Stock = nuevoStock;
-                    break;
+                    if (Validaciones.ValidoNumeroInt(nuevoStock) || Validaciones.ValidoNumeroDouble(precioCasteado))
+                    {
+                        retorno = true;
+                        nuevosProductos[i].Precio = precioCasteado;
+                        nuevosProductos[i].Stock = nuevoStock;
+                        break;
+                    }
                 }
             }
             if (retorno == true)
@@ -100,7 +108,6 @@ namespace Troncoso.Elias.Parcial
 
             }
         }
-
         private void IBtn_Cliente_Agregar_Click(object sender, EventArgs e)
         {
             frm_Agregar_Empleado form_Agrego_Empleado = new frm_Agregar_Empleado();
