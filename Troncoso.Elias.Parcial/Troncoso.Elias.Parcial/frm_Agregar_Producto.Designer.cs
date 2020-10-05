@@ -61,7 +61,6 @@
             this.lbl_Id_Producto_Agre.Size = new System.Drawing.Size(171, 16);
             this.lbl_Id_Producto_Agre.TabIndex = 1;
             this.lbl_Id_Producto_Agre.Text = "Ingrese el id de producto";
-            this.lbl_Id_Producto_Agre.Click += new System.EventHandler(this.Lbl_Id_Producto_Agre_Click);
             // 
             // lbl_Precio_Producto_Agre
             // 
@@ -72,7 +71,6 @@
             this.lbl_Precio_Producto_Agre.Size = new System.Drawing.Size(186, 16);
             this.lbl_Precio_Producto_Agre.TabIndex = 2;
             this.lbl_Precio_Producto_Agre.Text = "Ingrese precio del producto";
-            this.lbl_Precio_Producto_Agre.Click += new System.EventHandler(this.Lbl_Precio_Producto_Agre_Click);
             // 
             // lbl_Stock_Producto_Agre
             // 
@@ -90,7 +88,6 @@
             this.txtB_Nombre_Producto_Agre.Name = "txtB_Nombre_Producto_Agre";
             this.txtB_Nombre_Producto_Agre.Size = new System.Drawing.Size(133, 20);
             this.txtB_Nombre_Producto_Agre.TabIndex = 4;
-            this.txtB_Nombre_Producto_Agre.TextChanged += new System.EventHandler(this.TxtB_Nombre_Producto_Agre_TextChanged);
             // 
             // txtB_Id_Producto_Agre
             // 
@@ -99,7 +96,6 @@
             this.txtB_Id_Producto_Agre.Name = "txtB_Id_Producto_Agre";
             this.txtB_Id_Producto_Agre.Size = new System.Drawing.Size(133, 20);
             this.txtB_Id_Producto_Agre.TabIndex = 5;
-            this.txtB_Id_Producto_Agre.TextChanged += new System.EventHandler(this.TxtB_Id_Producto_Agre_TextChanged);
             // 
             // txtB_Precio_Producto_Agre
             // 
@@ -107,7 +103,6 @@
             this.txtB_Precio_Producto_Agre.Name = "txtB_Precio_Producto_Agre";
             this.txtB_Precio_Producto_Agre.Size = new System.Drawing.Size(133, 20);
             this.txtB_Precio_Producto_Agre.TabIndex = 6;
-            this.txtB_Precio_Producto_Agre.TextChanged += new System.EventHandler(this.TxtB_Precio_Producto_Agre_TextChanged);
             // 
             // txtB_Stock_Producto_Agre
             // 
@@ -115,7 +110,6 @@
             this.txtB_Stock_Producto_Agre.Name = "txtB_Stock_Producto_Agre";
             this.txtB_Stock_Producto_Agre.Size = new System.Drawing.Size(133, 20);
             this.txtB_Stock_Producto_Agre.TabIndex = 7;
-            this.txtB_Stock_Producto_Agre.TextChanged += new System.EventHandler(this.TxtB_Stock_Producto_Agre_TextChanged);
             // 
             // btn_Agregar_Producto
             // 
@@ -156,9 +150,9 @@
             this.Controls.Add(this.lbl_Precio_Producto_Agre);
             this.Controls.Add(this.lbl_Id_Producto_Agre);
             this.Controls.Add(this.lbl_Nombre_Producto_Agre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Agregar_Producto";
-            this.Text = "frm_Agregar_Producto";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Agregar_Producto_FormClosing);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             ((System.ComponentModel.ISupportInitialize)(this.pBox_AgregarProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

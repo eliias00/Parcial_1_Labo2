@@ -13,23 +13,18 @@ namespace Troncoso.Elias.Parcial
 {
     public partial class frm_Agregar_cliente : Form
     {
-
-
+        /// <summary>
+        /// Inicializa el form
+        /// </summary>
         public frm_Agregar_cliente()
         {
             InitializeComponent();
         }
-
-        private void Frm_Agregar_cliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Crea cliente y lo agrega a la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Cliente_Ing_Click(object sender, EventArgs e)
         {
             int auxDni;
@@ -47,6 +42,7 @@ namespace Troncoso.Elias.Parcial
 
                 if (Comercio.AgregarCliente(clienteNuevo) == true)
                 {
+                    MessageBox.Show(clienteNuevo.Mostrar());
                     MessageBox.Show("alta de cliente exitosamente");
                 }
                 else
@@ -58,6 +54,15 @@ namespace Troncoso.Elias.Parcial
             {
                     MessageBox.Show("Complete todos los campos");
             }
+        }
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Frm_Agregar_cliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.formLogin.Show();
         }
     }
 }

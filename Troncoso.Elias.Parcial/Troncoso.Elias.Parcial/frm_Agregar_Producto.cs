@@ -14,36 +14,20 @@ namespace Troncoso.Elias.Parcial
 {
     public partial class frm_Agregar_Producto : Form
     {
+        /// <summary>
+        /// Inicializa el form
+        /// </summary>
         public frm_Agregar_Producto()
         {
             InitializeComponent();
-
-
         }
-
-        private void TxtB_Nombre_Producto_Agre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtB_Id_Producto_Agre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtB_Precio_Producto_Agre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtB_Stock_Producto_Agre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Crea producto y lo agrega a la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
-
             string nombre = txtB_Nombre_Producto_Agre.Text;
             int id;
             double precio;
@@ -71,23 +55,6 @@ namespace Troncoso.Elias.Parcial
             {
                 MessageBox.Show("Le falta completar un campo");
             }
-        }
-
-        private void Frm_Agregar_Producto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        
-
-
-        }
-
-        private void Lbl_Precio_Producto_Agre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_Id_Producto_Agre_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

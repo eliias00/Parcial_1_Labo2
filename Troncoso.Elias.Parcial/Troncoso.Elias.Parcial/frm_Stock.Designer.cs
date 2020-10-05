@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Stock));
             this.lbl_Stock_Titulo = new System.Windows.Forms.Label();
             this.iBtn_Stock = new FontAwesome.Sharp.IconButton();
             this.lbl_Agregar_Prod = new System.Windows.Forms.Label();
@@ -263,7 +264,6 @@
             this.label1.Size = new System.Drawing.Size(63, 32);
             this.label1.TabIndex = 15;
             this.label1.Text = "  Info\r\nListados";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // frm_Stock
             // 
@@ -285,8 +285,9 @@
             this.Controls.Add(this.lbl_Agregar_Prod);
             this.Controls.Add(this.iBtn_Stock);
             this.Controls.Add(this.lbl_Stock_Titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Stock";
-            this.Text = "Stock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Stock_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGViewStock)).EndInit();

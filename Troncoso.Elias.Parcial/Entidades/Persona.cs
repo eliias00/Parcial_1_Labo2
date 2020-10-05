@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Persona
+    public abstract class Persona
     {
-
-         string contraseña;
+        string contraseña;
         protected string nombre;
         protected string apellido;
-        protected int dni;
-        protected long telefono;
+        protected int    dni;
+        protected long   telefono;
         protected string email;
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public Persona()
         {
             this.contraseña = "sin contraseña";
@@ -23,9 +25,16 @@ namespace Entidades
             this.dni = -1;
             this.telefono = -1;
             this.email = "sin email";
-       
         }
-
+        /// <summary>
+        /// Constructor de la clase con parametros
+        /// </summary>
+        /// <param name="auxContraseña"></param>
+        /// <param name="auxDni"></param>
+        /// <param name="auxNombre"></param>
+        /// <param name="auxApellido"></param>
+        /// <param name="auxTel"></param>
+        /// <param name="auxEmail"></param>
         public Persona(string auxContraseña, int auxDni, string auxNombre,
                        string auxApellido, long auxTel, string auxEmail) : this()
         {
@@ -35,42 +44,71 @@ namespace Entidades
             this.dni = auxDni;
             this.telefono = auxTel;
             this.email = auxEmail;
-        
         }
-
+        /// <summary>
+        /// Propiedad Contraseña
+        /// </summary>
         public string Contraseña
         {
             set { this.contraseña = value; }
             get { return this.contraseña; }
         }
+        /// <summary>
+        /// Propiedad Nombre
+        /// </summary>
         public string Nombre
         {
             set { this.nombre = value; }
             get { return this.nombre; }
         }
+        /// <summary>
+        /// Propiedad Apellido
+        /// </summary>
         public string Apellido
         {
             set { this.apellido = value; }
             get { return this.apellido; }
         }
+        /// <summary>
+        /// Propiedad Dni
+        /// </summary>
         public int Dni
         {
             set { this.dni = value; }
             get { return this.dni; }
         }
+        /// <summary>
+        /// Propiedad Telefono
+        /// </summary>
         public long Telefono
         {
             set { this.telefono = value; }
             get { return this.telefono; }
         }
+        /// <summary>
+        /// Propiedad Email
+        /// </summary>
         public string Email
         {
             set { this.email = value; }
             get { return this.email; }
         }
-      /*  public int Id
+        /// <summary>
+        /// Genera un stringBuilder con los datos de persona
+        /// </summary>
+        /// <returns></returns>
+        public virtual string Mostrar()
         {
-            get { return this.id; }
-        }*/
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendFormat("Nombre: {0}\n", this.nombre);
+            sb.AppendFormat("Apellido: {0}\n", this.apellido);
+            sb.AppendFormat("Contraseña: {0}\n", this.contraseña);
+            sb.AppendFormat("Dni: {0}\n", this.dni.ToString());
+            sb.AppendFormat("Telefono: {0}\n", this.telefono);
+            sb.AppendFormat("Email: {0}", this.email);
+                                                                         
+            return sb.ToString();
+        }
     }
 }

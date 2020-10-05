@@ -21,6 +21,9 @@ namespace Troncoso.Elias.Parcial
         List<string> nombresProductos;
         List<Productos> nuevosProductos;
         List<Empleado> nuevosEmpleados;
+        /// <summary>
+        /// Instancia objetos y inicializa el form
+        /// </summary>
         public frm_Compras()
         {
             nombresProductos = new List<string>();
@@ -28,6 +31,11 @@ namespace Troncoso.Elias.Parcial
             clienteCompra = new Cliente();
             InitializeComponent();
         }
+        /// <summary>
+        /// Cargo informacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Compras_Load(object sender, EventArgs e)
         {
             this.iBtn_Descarga_Arch.Visible = false;
@@ -44,12 +52,22 @@ namespace Troncoso.Elias.Parcial
             }
             lbl_Nombre_Empleado.Text = nombreAleatorio;
         }
+        /// <summary>
+        /// Uso el Drag Drop con las filas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DGV_Stock_Prod_Comp_MouseDown(object sender, MouseEventArgs e)
         {
             int fila;
             fila = dGV_Stock_Prod_Comp.HitTest(e.X, e.Y).RowIndex;
             dGV_Stock_Prod_Comp.DoDragDrop(fila, DragDropEffects.Copy);
         }
+        /// <summary>
+        /// Muevo el producto de un dataGrid a otro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DGV_Prod_Comp_DragDrop(object sender, DragEventArgs e)
         {
             int destRow;
@@ -64,20 +82,20 @@ namespace Troncoso.Elias.Parcial
                 dGV_Prod_Comp.Rows[destRow].Cells[destCol].Value = dGV_Stock_Prod_Comp.Rows[fila].Cells[0].Value;
             }
         }
+        /// <summary>
+        /// Copia el origen del dato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DGV_Prod_Comp_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
         }
-        private void DGV_Prod_Comp_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void DGV_Stock_Prod_Comp_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Hace la compra del producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Comprar_Click_1(object sender, EventArgs e)
         {
             double suma = 0;
@@ -92,14 +110,13 @@ namespace Troncoso.Elias.Parcial
             string[] nombreProducto = new string[nuevosProductos.Count];
             int[] unidadesProducto = new int[nuevosProductos.Count];
 
-
             for (int i = 0; i < dGV_Prod_Comp.RowCount - 1; i++)
             {
-                if (dGV_Prod_Comp.Rows[i].Cells[1].Value != null && dGV_Prod_Comp.Rows[i].Cells[0].Value != null)
+                if (dGV_Prod_Comp.Rows[i].Cells[1].Value != null && dGV_Prod_Comp.Rows[i].Cells[0].Value != null 
+                    && Validaciones.ValidoCelda(dGV_Prod_Comp.Rows[i].Cells[1].Value.ToString()))
                 {
                     double.TryParse(dGV_Prod_Comp.Rows[i].Cells[1].Value.ToString(), out numeroCelda);
                     productoCelda = dGV_Prod_Comp.Rows[i].Cells[0].Value.ToString();
-
                     for (int j = 0; j < nuevosProductos.Count; j++)
                     {
                         if (productoCelda == nuevosProductos[j].Nombre)
@@ -189,12 +206,20 @@ namespace Troncoso.Elias.Parcial
                 MessageBox.Show("Hubo un error al hacer la compra.\nREINTENTE");
             }
         }
-
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Compras_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.formLogin.Show();
         }
-
+        /// <summary>
+        /// Genero archivo tipo ticket
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Descarga_Arch_Click(object sender, EventArgs e)
         {
             string hora = DateTime.Now.ToString("hhmmss");

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Listados));
             this.dGView_Listados = new System.Windows.Forms.DataGridView();
             this.dGView_Stock_10U = new System.Windows.Forms.DataGridView();
             this.iBtn_Listado = new FontAwesome.Sharp.IconButton();
@@ -200,8 +201,8 @@
             this.Controls.Add(this.iBtn_Listado);
             this.Controls.Add(this.dGView_Stock_10U);
             this.Controls.Add(this.dGView_Listados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Listados";
-            this.Text = "frm_Listados";
             this.Load += new System.EventHandler(this.Frm_Listados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGView_Listados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGView_Stock_10U)).EndInit();

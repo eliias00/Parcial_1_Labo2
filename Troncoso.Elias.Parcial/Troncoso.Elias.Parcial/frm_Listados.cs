@@ -16,22 +16,30 @@ namespace Troncoso.Elias.Parcial
     {
         List<Compra> listaCompras;
         List<Productos> listaProductos;
+        /// <summary>
+        /// Inicializa el form
+        /// </summary>
         public frm_Listados()
         {
-            
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Cargo Informacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Listados_Load(object sender, EventArgs e)
         {
-
             string legajoABuscar = Interaction.InputBox("Ingrese el Legajo a buscar");
             listaProductos = Comercio.stock10Unidades();
             ArmoDatagrStock10U(listaProductos);
             listaCompras = Comercio.VentasPorEmpleado(legajoABuscar);
             ArmoDatagrLegajoCompras(listaCompras);
-
         }
+        /// <summary>
+        /// Armo dataGrid de compras
+        /// </summary>
+        /// <param name="listaDeCompras"></param>
         private void ArmoDatagrLegajoCompras(List<Compra> listaDeCompras)
         {
             this.dGView_Listados.ReadOnly = true;
@@ -39,6 +47,10 @@ namespace Troncoso.Elias.Parcial
             this.dGView_Listados.DataSource = listaDeCompras;
             this.dGView_Listados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+        /// <summary>
+        /// Armo dataGrid para stock 10 unidades
+        /// </summary>
+        /// <param name="listaDeProductos"></param>
         private void ArmoDatagrStock10U(List<Productos> listaDeProductos)
         {
             this.dGView_Stock_10U.ReadOnly = true;

@@ -195,7 +195,6 @@
             this.pBox_AgregarEmpleado.Size = new System.Drawing.Size(721, 468);
             this.pBox_AgregarEmpleado.TabIndex = 32;
             this.pBox_AgregarEmpleado.TabStop = false;
-            this.pBox_AgregarEmpleado.Click += new System.EventHandler(this.PBox_AgregarEmpleado_Click);
             // 
             // frm_Agregar_Empleado
             // 
@@ -217,8 +216,8 @@
             this.Controls.Add(this.lbl_Contraseña_Emp);
             this.Controls.Add(this.lbl_Legajo_Emp);
             this.Controls.Add(this.pBox_AgregarEmpleado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Agregar_Empleado";
-            this.Text = "frm_Agregar_Empleado";
             this.Load += new System.EventHandler(this.Frm_Agregar_Empleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_AgregarEmpleado)).EndInit();
             this.ResumeLayout(false);

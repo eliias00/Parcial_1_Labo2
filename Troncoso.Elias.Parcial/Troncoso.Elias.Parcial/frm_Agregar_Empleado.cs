@@ -15,11 +15,18 @@ namespace Troncoso.Elias.Parcial
     {
         Empleado nuevoEmplado;
         List<Empleado> empleados;
+        /// <summary>
+        /// Inicializa el form
+        /// </summary>
         public frm_Agregar_Empleado()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Crea empleado y lo agrega a la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Emplado_Ing_Click(object sender, EventArgs e)
         {
             int auxDni;
@@ -39,6 +46,7 @@ namespace Troncoso.Elias.Parcial
 
                 if (Comercio.AgregarEmpleado(nuevoEmplado) == true)
                 {
+                    MessageBox.Show(nuevoEmplado.Mostrar());
                     MessageBox.Show("alta de empleado exitosamente");
                 }
                 else
@@ -51,16 +59,15 @@ namespace Troncoso.Elias.Parcial
                 MessageBox.Show("le falta llenar algun campo");
             }
         }
-
+        /// <summary>
+        /// Muestra legajo en el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Agregar_Empleado_Load(object sender, EventArgs e)
         {
             string legajo = Comercio.generoLegajoEmpleadoNuevo();
             lbl_Legajo_Emp.Text = legajo;
-        }
-
-        private void PBox_AgregarEmpleado_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

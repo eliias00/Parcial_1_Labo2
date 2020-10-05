@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Agregar_cliente));
             this.pBox_Ingreso_cliente = new System.Windows.Forms.PictureBox();
             this.lbl_Usuario_Ing = new System.Windows.Forms.Label();
             this.txtBox_Usuario_Ing = new System.Windows.Forms.TextBox();
@@ -163,7 +164,6 @@
             this.lbl_Telefono_Ing.Size = new System.Drawing.Size(88, 16);
             this.lbl_Telefono_Ing.TabIndex = 11;
             this.lbl_Telefono_Ing.Text = "Telefono/Cel";
-            this.lbl_Telefono_Ing.Click += new System.EventHandler(this.Label1_Click);
             // 
             // txtBox_Email_Ing
             // 
@@ -218,9 +218,10 @@
             this.Controls.Add(this.txtBox_Usuario_Ing);
             this.Controls.Add(this.lbl_Usuario_Ing);
             this.Controls.Add(this.pBox_Ingreso_cliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Agregar_cliente";
-            this.Text = "frm_Agregar_cliente";
-            this.Load += new System.EventHandler(this.Frm_Agregar_cliente_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Agregar_cliente_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_Ingreso_cliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,16 +16,28 @@ namespace Troncoso.Elias.Parcial
     {
         List<Productos> nuevosProductos;
         Productos ProductoAComparar;
+        /// <summary>
+        /// Inicializa el form
+        /// </summary>
         public frm_Stock()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Carga informacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Stock_Load(object sender, EventArgs e)
         {
             Comercio.CargaDeDatos();
             ArmoDatagrid();
         }
+        /// <summary>
+        /// Elimina producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Remove_Click(object sender, EventArgs e)
         {
             ProductoAComparar = new Productos();
@@ -55,19 +67,30 @@ namespace Troncoso.Elias.Parcial
                 MessageBox.Show("no se pudo realizar la baja");
             }
         }
-
+        /// <summary>
+        /// Cierra form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Stock_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.formLogin.Show();
         }
-
+        /// <summary>
+        /// Llamo al form para agregar un producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Stock_Click(object sender, EventArgs e)
         {
             frm_Agregar_Producto formProductos = new frm_Agregar_Producto();
             formProductos.Show();
-
         }
-
+        /// <summary>
+        /// Modifico producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Modif_Prod_Click(object sender, EventArgs e)
         {
             ProductoAComparar = new Productos();
@@ -105,19 +128,30 @@ namespace Troncoso.Elias.Parcial
             else
             {
                 MessageBox.Show("no se pudo realizar la modificacion");
-
             }
         }
+        /// <summary>
+        /// Llamo a form para agregar empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Cliente_Agregar_Click(object sender, EventArgs e)
         {
             frm_Agregar_Empleado form_Agrego_Empleado = new frm_Agregar_Empleado();
             form_Agrego_Empleado.Show();
         }
-
+        /// <summary>
+        /// Actualizo la informacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Refrescar_Click(object sender, EventArgs e)
         {
             ArmoDatagrid();
         }
+        /// <summary>
+        /// Armo dataGrid
+        /// </summary>
         private void ArmoDatagrid()
         {
             nuevosProductos = Comercio.RetornaLista();
@@ -126,12 +160,11 @@ namespace Troncoso.Elias.Parcial
             this.dGViewStock.DataSource = nuevosProductos;
             this.dGViewStock.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Llamo a form de listados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IBtn_Info_Listados_Click(object sender, EventArgs e)
         {
             frm_Listados formListados = new frm_Listados();

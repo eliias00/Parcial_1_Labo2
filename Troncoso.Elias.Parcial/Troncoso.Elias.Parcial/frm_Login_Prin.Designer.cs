@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login_Prin));
             this.pBox_Login = new System.Windows.Forms.PictureBox();
             this.txtBox_Usuario = new System.Windows.Forms.TextBox();
             this.txtBox_Contraseña = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.pBox_Login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox_Login.TabIndex = 0;
             this.pBox_Login.TabStop = false;
-            this.pBox_Login.Click += new System.EventHandler(this.PBox_Login_Click);
             // 
             // txtBox_Usuario
             // 
@@ -96,7 +96,6 @@
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher1_Changed);
             // 
             // checkBox_Contraseña
             // 
@@ -122,7 +121,9 @@
             this.Controls.Add(this.txtBox_Contraseña);
             this.Controls.Add(this.txtBox_Usuario);
             this.Controls.Add(this.pBox_Login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Login_Prin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "kwik-E-Mart";
             this.Load += new System.EventHandler(this.Frm_Login_Prin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_Login)).EndInit();
