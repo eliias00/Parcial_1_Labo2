@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using Entidades;
+using Excepciones;
 
 namespace Parcial_2_Troncoso_Elias_2D
 {
@@ -19,6 +20,9 @@ namespace Parcial_2_Troncoso_Elias_2D
         Thread Actualizo;
         Thread hiloAgregaNuevoPedido;
         public event delegadoCambioEstado delCamEstado;
+        /// <summary>
+        /// Constructor del form
+        /// </summary>
         public frmPedidos()
         {
             pedidos = new List<PedidosVan>();
@@ -26,27 +30,51 @@ namespace Parcial_2_Troncoso_Elias_2D
             Control.CheckForIllegalCrossThreadCalls = false;
             hiloAgregaNuevoPedido = new Thread(IniciarCiclo);
             Actualizo = new Thread(BuscoPedidosNuevosParAgregar);
-
         }
+        /// <summary>
+        /// Inicializa el form y agrego eventos a al delegado 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPedidos_Load(object sender, EventArgs e)
         {
             Local.LevantoPedidosDeXml();
             BuscoPedidosNuevosParAgregar();
             hiloAgregaNuevoPedido.Start();
             delCamEstado += SqlConexion.Update;
+            delCamEstado += PedidosVan.DeliveryCorre;
         }
+        /// <summary>
+        /// Agrego pedido al ListView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarPedido_Click(object sender, EventArgs e)
         {
-            if (PedidosVan.GeneroPedidoRandom())
-            {
-                MessageBox.Show("Se Agrego a la base de datos");
+            try
+           {
+                if (PedidosVan.GeneroPedidoRandom())
+                {
+                    MessageBox.Show("Se Agrego a la base de datos");
+                }
             }
-
+            catch (Exception ex)
+            {
+                throw new AgregoProdError(ex);
+            }            
         }
+        /// <summary>
+        /// Cierro el form y aborto el Hilo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPedidos_FormClosing(object sender, FormClosingEventArgs e)
         {
             hiloAgregaNuevoPedido.Abort();
         }
+        /// <summary>
+        /// Busco pedidos y los agrego al ListView
+        /// </summary>
         private void BuscoPedidosNuevosParAgregar()
         {
             if (this.lViewPedidosLevantados.InvokeRequired)
@@ -68,6 +96,9 @@ namespace Parcial_2_Troncoso_Elias_2D
                 }
             }
         }
+        /// <summary>
+        /// Muevo el pedido Al otro ListView
+        /// </summary>
         public void IniciarCiclo()
         {
             int i = 1;
@@ -83,6 +114,10 @@ namespace Parcial_2_Troncoso_Elias_2D
                 }
             }
         }
+        /// <summary>
+        /// Invoco al delegado y termino los pedidos 
+        /// </summary>
+        /// <param name="pedidoTerminado"></param>
         private void TerminoPedido(PedidosVan pedidoTerminado)
         {
             lViewPedidosHechos.Items.Add(pedidoTerminado.NumPedido);

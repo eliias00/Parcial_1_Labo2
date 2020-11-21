@@ -4,3 +4,9 @@ C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Ex
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.dll
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.pdb
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Excepciones\obj\Debug\Excepciones.pdb

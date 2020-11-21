@@ -15,7 +15,7 @@ namespace Entidades
         static SqlCommand sqlComando;
         static SqlDataReader dr;
         /// <summary>
-        /// Establece el server a conectar (Temas: SQL y Base de Datos).
+        /// Establece el server a conectar 
         /// </summary>
         static SqlConexion()
         {
@@ -23,6 +23,11 @@ namespace Entidades
             sqlComando = new SqlCommand();
             sqlComando.Connection = sqlConexion;
         }
+        /// <summary>
+        /// Hace la conexion a la base de datos 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static bool Conexion(string query)
         {
             bool retorno = false;
@@ -48,6 +53,11 @@ namespace Entidades
             }
             return retorno;
         }
+        /// <summary>
+        /// Query para hacer insertar el pedido en la base de datos
+        /// </summary>
+        /// <param name="pedido"></param>
+        /// <returns></returns>
         public static bool Insert(PedidosVan pedido)
         {
             string query = "Insert into PedidosVan(Producto, NumPedido, Domicilio, Telefono, EstPedido, Delivery)" +
@@ -63,6 +73,11 @@ namespace Entidades
             return Conexion(query);
 
         }
+        /// <summary>
+        /// Query para cambiar el estado del pedido
+        /// </summary>
+        /// <param name="pedido"></param>
+        /// <returns></returns>
         public static bool Update(PedidosVan pedido)
         {
             string query = "Update PedidosVan set EstPedido = @auxEstPed where NumPedido = @auxNumPedido";

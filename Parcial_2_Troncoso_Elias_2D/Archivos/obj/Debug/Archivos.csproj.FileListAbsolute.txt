@@ -7,3 +7,12 @@ C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Archivos\bin\Debug\Excep
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.csproj.CopyComplete
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.dll
 C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.pdb
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\bin\Debug\Archivos.dll
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\bin\Debug\Archivos.pdb
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\bin\Debug\Excepciones.dll
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\bin\Debug\Excepciones.pdb
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.csproj.CopyComplete
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.dll
+C:\Users\Elias\OneDrive\Escritorio\github parcial\Parcial_1_Labo2\Parcial_2_Troncoso_Elias_2D\Archivos\obj\Debug\Archivos.pdb

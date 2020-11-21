@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregoProdError.cs" />
     <Compile Include="ArchivoError.cs" />
+    <Compile Include="GeneroTxtError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqlErrorExc.cs" />
   </ItemGroup>

@@ -13,19 +13,32 @@ namespace Entidades
     {
         static List<PedidosVan> pedidosPorHacer;
         static List<PedidosVan> pedidosHechos;
+        /// <summary>
+        /// Constructor Estatico
+        /// </summary>
         static Local()
         {
             pedidosPorHacer = new List<PedidosVan>();
             pedidosHechos = new List<PedidosVan>();
         }
+        /// <summary>
+        /// Propiedad PedidosPorHacer
+        /// </summary>
         public static List<PedidosVan> PedidosPorHacer
         {
             get { return pedidosPorHacer; }
         }
+        /// <summary>
+        /// PedidosHechos
+        /// </summary>
         public static List<PedidosVan> PedidosHechos
         {
             get { return pedidosHechos; }
         }
+        /// <summary>
+        /// Deserealizo un xml
+        /// </summary>
+        /// <returns></returns>
         public static List<PedidosVan> Leer()
         {
             List<PedidosVan> pedidos = new List<PedidosVan>();
@@ -35,7 +48,9 @@ namespace Entidades
 
             return pedidos;
         }
-        //public static List<PedidosVan> LevantoPedidosDeXml()
+        /// <summary>
+        /// Agrego a la lista los pedidos a hacer
+        /// </summary>
         public static void LevantoPedidosDeXml()
         {
             List<PedidosVan> pedidos = Leer();
@@ -46,6 +61,11 @@ namespace Entidades
             }
             //   return pedidosPorHacer;
         }
+        /// <summary>
+        /// Serializo 10 pedidos y los guardo
+        /// </summary>
+        /// <param name="pedidos"></param>
+        /// <returns></returns>
         public static bool GuardarPedidosXml(List<PedidosVan> pedidos)
         {
             string path = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "Pedidos.xml");

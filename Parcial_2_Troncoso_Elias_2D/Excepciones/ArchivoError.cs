@@ -9,7 +9,7 @@ namespace Excepciones
     public class ArchivoError : Exception
     {
         /// <summary>
-        /// Usa el constructor base para mostrar un mensaje de error (Temas: Excepciones).
+        /// Usa el constructor base para mostrar un mensaje de error
         /// </summary>
         /// <param name="innerExcepction"></param>
         public ArchivoError(Exception innerExcepction) : base("Error de archivo: ", innerExcepction)
