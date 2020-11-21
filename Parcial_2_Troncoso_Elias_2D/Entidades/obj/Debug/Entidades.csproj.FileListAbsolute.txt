@@ -1,0 +1,11 @@
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Entidades.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Archivos.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Excepciones.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Archivos.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\bin\Debug\Excepciones.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\obj\Debug\Entidades.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Entidades\obj\Debug\Entidades.pdb

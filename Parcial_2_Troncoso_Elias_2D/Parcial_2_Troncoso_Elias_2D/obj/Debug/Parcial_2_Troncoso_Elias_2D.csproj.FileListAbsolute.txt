@@ -1,0 +1,17 @@
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.csprojAssemblyReference.cache
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.frmPedidos.resources
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.Properties.Resources.resources
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.csproj.GenerateResource.cache
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.csproj.CoreCompileInputs.cache
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Parcial_2_Troncoso_Elias_2D.exe.config
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Parcial_2_Troncoso_Elias_2D.exe
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Parcial_2_Troncoso_Elias_2D.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Archivos.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Entidades.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Excepciones.dll
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Archivos.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Entidades.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\bin\Debug\Excepciones.pdb
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.csproj.CopyComplete
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.exe
+C:\Users\Elias\source\repos\Parcial_2_Troncoso_Elias_2D\Parcial_2_Troncoso_Elias_2D\obj\Debug\Parcial_2_Troncoso_Elias_2D.pdb
