@@ -1,0 +1,111 @@
+USE [master]
+GO
+/****** Object:  Database [Parcial_2]    Script Date: 24/11/2020 18:49:48 ******/
+CREATE DATABASE [Parcial_2]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Parcial_2', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS07\MSSQL\DATA\Parcial_2.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Parcial_2_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS07\MSSQL\DATA\Parcial_2_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [Parcial_2] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Parcial_2].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Parcial_2] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Parcial_2] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Parcial_2] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Parcial_2] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Parcial_2] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Parcial_2] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Parcial_2] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Parcial_2] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Parcial_2] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Parcial_2] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Parcial_2] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Parcial_2] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Parcial_2] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Parcial_2] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Parcial_2] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Parcial_2] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Parcial_2] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Parcial_2] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Parcial_2] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Parcial_2] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Parcial_2] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Parcial_2] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Parcial_2] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [Parcial_2] SET  MULTI_USER 
+GO
+ALTER DATABASE [Parcial_2] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Parcial_2] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Parcial_2] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Parcial_2] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [Parcial_2] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [Parcial_2] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [Parcial_2] SET QUERY_STORE = OFF
+GO
+USE [Parcial_2]
+GO
+/****** Object:  Table [dbo].[PedidosVan]    Script Date: 24/11/2020 18:49:48 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PedidosVan](
+	[Producto] [nvarchar](50) NOT NULL,
+	[NumPedido] [nvarchar](50) NOT NULL,
+	[Domicilio] [nvarchar](50) NOT NULL,
+	[Telefono] [nvarchar](50) NOT NULL,
+	[EstPedido] [nchar](10) NOT NULL,
+	[Delivery] [nchar](10) NOT NULL
+) ON [PRIMARY]
+GO
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Mermelada', N'26061820201121', N'2', N'53097290', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Cigarrillos', N'34061820201121', N'0', N'86037298', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Gaseosa', N'40061820201121', N'2', N'111517', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Arroz', N'47061820201121', N'2', N'47996500', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Cigarrillos', N'48061820201121', N'2', N'86711040', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Mermelada', N'20201121180650', N'3', N'50508205', N'Entregado ', N'Si        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'BebidaAlcoholica', N'51061820201121', N'3', N'91300175', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'Gaseosa', N'20201121180654', N'1', N'6679526', N'Entregado ', N'Si        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'JugoEnPolvo', N'59191820201121', N'4', N'75741867', N'Hecho     ', N'No        ')
+INSERT [dbo].[PedidosVan] ([Producto], [NumPedido], [Domicilio], [Telefono], [EstPedido], [Delivery]) VALUES (N'BebidaAlcoholica', N'04201820201121', N'3', N'97119461', N'Hecho     ', N'No        ')
+GO
+USE [master]
+GO
+ALTER DATABASE [Parcial_2] SET  READ_WRITE 
+GO
